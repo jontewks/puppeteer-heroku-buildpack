@@ -39,7 +39,7 @@ case "$stack" in
     PACKAGES="libxss1"
     ;;
   "heroku-16")
-    PACKAGES="libxss1 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxi6 libxtst6 libnss3 libgconf-2-4 libxrandr2 libasound2 libatk1.0-0 libgtk2.0-0 libgtk-3-0 libxinerama1 libcairo-gobject2"
+    PACKAGES="libxss1 libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxfixes3 libxi6 libxtst6 libnss3 libgconf-2-4 libxrandr2 libasound2 libatk1.0-0 libgtk2.0-0 libgtk-3-0 libxinerama1 libcairo-gobject2 fonts-liberation libappindicator1 xdg-utils"
     ;;
   *)
     error "STACK must be 'cedar-14' or 'heroku-16', not '$stack.'"
