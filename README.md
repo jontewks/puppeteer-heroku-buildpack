@@ -18,3 +18,7 @@ $ heroku buildpacks:set https://github.com/jontewks/puppeteer-heroku-buildpack.g
 
 ### Additional language support
 If you need support for Japanese, Chinese, or Korean fonts, a fork of this buildpack has been made to include those as well: https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack
+
+## Issues
+
+If you run into any issues with this buildpack, please open an issue on this repo and/or submit a PR that resolves it. Different versions of chrome have different dependencies and so some issues can creep in without me knowing. Thanks!
