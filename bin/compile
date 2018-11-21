@@ -30,9 +30,8 @@ function indent() {
     *)      sed -u "$c";;
   esac
 }
-echo $STACK
 
-PACKAGES="gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libcairo-gobject2 libxinerama1 libgtk2.0-0 libpangoft2-1.0-0 libthai0 libpixman-1-0 libxcb-render0 libharfbuzz0b libdatrie1 libgraphite2-3 libpng16-16"
+PACKAGES="gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo2 libcups2 libdbus-1-3 libexpat1 libfontconfig1 libgcc1 libgconf-2-4 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk-3-0 libnspr4 libpango-1.0-0 libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release xdg-utils wget libcairo-gobject2 libxinerama1 libgtk2.0-0 libpangoft2-1.0-0 libthai0 libpixman-1-0 libxcb-render0 libharfbuzz0b libdatrie1 libgraphite2-3 libpng16-16 libgnutls30"
 
 APT_CACHE_DIR="$CACHE_DIR/apt/cache"
 APT_STATE_DIR="$CACHE_DIR/apt/state"
@@ -41,6 +40,17 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
+
+case "$STACK" in
+  "cedar-14")
+    APT_FLAGS="--force-yes"
+    ;;
+  "heroku-16" | "heroku-18")
+    APT_FLAGS="--allow-downgrades --allow-remove-essential --allow-change-held-packages"
+    ;;
+  *)
+    error "STACK must be 'cedar-14', 'heroku-16', or 'heroku-18'"
+esac
 
 topic "Updating apt caches"
 apt-get $APT_OPTIONS update | indent
@@ -54,7 +64,7 @@ for PACKAGE in $PACKAGES; do
     curl -s -L -z $PACKAGE_FILE -o $PACKAGE_FILE $PACKAGE 2>&1 | indent
   else
     topic "Fetching .debs for $PACKAGE"
-    apt-get $APT_OPTIONS -y --allow-downgrades --allow-remove-essential --allow-change-held-packages -d install --reinstall $PACKAGE | indent
+    apt-get $APT_OPTIONS -y $APT_FLAGS -d install --reinstall $PACKAGE | indent
   fi
 done
 
