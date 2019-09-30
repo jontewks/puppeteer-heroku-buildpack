@@ -7,13 +7,13 @@ Installs dependencies needed in order to run puppeteer on heroku. Be sure to inc
 To use the latest stable version run:
 
 ```sh-session
-$ heroku buildpacks:set jontewks/puppeteer
+$ heroku buildpacks:add jontewks/puppeteer
 ```
 
 Or use the source code in this repository:
 
 ```sh-session
-$ heroku buildpacks:set https://github.com/jontewks/puppeteer-heroku-buildpack.git
+$ heroku buildpacks:add https://github.com/jontewks/puppeteer-heroku-buildpack.git
 ```
 
 ### Additional language support
