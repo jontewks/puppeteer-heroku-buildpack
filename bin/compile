@@ -2,7 +2,7 @@
 # bin/compile <build-dir> <cache-dir>
 
 # fail fast
-set -e
+set -eo pipefail
 
 # debug
 # set -x
