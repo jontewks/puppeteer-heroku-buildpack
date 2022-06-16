@@ -61,11 +61,11 @@ PACKAGES="gconf-service libasound2 libatk1.0-0 libatk-bridge2.0-0 libc6 libcairo
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 
 case "$STACK" in
-  "heroku-18" | "heroku-20")
+  "heroku-18" | "heroku-20" | "heroku-22")
     APT_FLAGS="--allow-downgrades --allow-remove-essential --allow-change-held-packages"
     ;;
   *)
-    error "STACK must be 'heroku-18' or 'heroku-20', not '${STACK}'"
+    error "STACK must be 'heroku-18' or 'heroku-20' or 'heroku-22', not '${STACK}'"
 esac
 
 topic "Updating apt caches"
