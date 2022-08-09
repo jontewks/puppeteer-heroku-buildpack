@@ -57,6 +57,10 @@ A common issue is running into slug size maximums when using this buildpack. Unf
 | `libxtst6` | 0.05 |
 | `xdg-utils` | 344 😱 |
 
-Some of these are quite large but unfortunately there is nothing we can do about it at the moment.
+Some of these are quite large but unfortunately there is nothing we can do about it at the moment if we are following Puppeteer's list of requirements exactly.
+
+I did try to deploy a very minimal Puppeteer app on Heroku without installing `xdg-utils` since that was the largest library by far, and to my surprise the app still worked. I'm assuming there will be some functionality within Puppeteer that won't work due to the missing library, but perhaps if you aren't doing anything that requires that library, you can get away with this other release that doesn't include that library to dramatically reduce your slug size. It's an experiment though so don't use this for very critical things as I have no idea when it might stop working for you.
+
+https://github.com/jontewks/puppeteer-heroku-buildpack/releases/tag/22.0.0-no-xdg-utils
 
 If you are still running into any issues with this buildpack after doing the above, please open an issue on this repo and/or submit a PR that resolves it. Different versions of chrome have different dependencies and so some issues can creep in without me knowing. Thanks!
