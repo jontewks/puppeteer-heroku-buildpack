@@ -63,4 +63,8 @@ I did try to deploy a very minimal Puppeteer app on Heroku without installing `x
 
 https://github.com/jontewks/puppeteer-heroku-buildpack/releases/tag/22.0.0-no-xdg-utils
 
+```sh-session
+$ heroku buildpacks:add https://github.com/jontewks/puppeteer-heroku-buildpack#22.0.0-no-xdg-utils
+```
+
 If you are still running into any issues with this buildpack after doing the above, please open an issue on this repo and/or submit a PR that resolves it. Different versions of chrome have different dependencies and so some issues can creep in without me knowing. Thanks!
