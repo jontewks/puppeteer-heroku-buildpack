@@ -76,6 +76,7 @@ PACKAGES="
   libxrandr2
   libxss1
   libxtst6
+  xdg-utils
 "
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 APT_FLAGS="--allow-downgrades --allow-remove-essential --allow-change-held-packages"
