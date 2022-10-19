@@ -58,6 +58,8 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 PACKAGES="
+  libcairo-gobject2
+
   fonts-liberation
   libappindicator3-1
   libasound2
