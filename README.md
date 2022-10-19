@@ -22,6 +22,14 @@ To use a specific version (Heroku-22 stack version in this case):
 $ heroku buildpacks:add https://github.com/jontewks/puppeteer-heroku-buildpack#22.0.0
 ```
 
+Also available for older stacks (Heroku-18):
+
+```sh-session
+$ heroku buildpacks:add https://github.com/jontewks/puppeteer-heroku-buildpack#v18.0.0
+```
+
+I believe the 22 stack version works for 20 as well, but if you run into package issues on 20 let me know and I'll make a specific one for that as well. I don't have a Heroku-20 stack app to test with and can't make one any longer.
+
 ### Additional language support
 
 If you need support for Japanese, Chinese, or Korean fonts, a fork of this buildpack has been made to include those as well: https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack
