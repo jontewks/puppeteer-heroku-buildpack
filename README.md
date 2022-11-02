@@ -32,7 +32,7 @@ I believe the 22 stack version works for 20 as well, but if you run into package
 
 ### Additional language support
 
-If you need support for Japanese, Chinese, or Korean fonts, a fork of this buildpack has been made to include those as well: https://github.com/CoffeeAndCode/puppeteer-heroku-buildpack
+If you need support for Japanese, Chinese, or Korean fonts, a fork of this buildpack has been made to include those as well: https://github.com/gnuletik/puppeteer-heroku-buildpack-fonts
 
 ## Issues
 
