@@ -1,5 +1,7 @@
 # puppeteer-heroku-buildpack
 
+## Note: only works for ```puppeteer``` version ≤ ```18```. For ```puppeteer``` version ≥ ```19``` use [heroku-buildpack-google-chrome](https://elements.heroku.com/buildpacks/heroku/heroku-buildpack-google-chrome)
+
 Installs dependencies needed in order to run puppeteer on heroku. Be sure to include `{ args: ['--no-sandbox'] }` in your call to `puppeteer.launch`.
 
 Puppeteer defaults to `headless: true` in `puppeteer.launch` and this shouldn't be changed. Heroku doesn't have a GUI to show you chrome when running `headless: false` and Heroku will throw an error.
