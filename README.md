@@ -63,7 +63,7 @@ A common issue is running into slug size maximums when using this buildpack. Unf
 | `libxrandr2` | 0.07 |
 | `libxss1` | 0.03 |
 | `libxtst6` | 0.05 |
-| `xdg-utils` | 344 😱 |
+| `xdg-utils` | 338 😱 |
 
 Some of these are quite large but unfortunately there is nothing we can do about it at the moment if we are following Puppeteer's list of requirements exactly.
 
