@@ -58,25 +58,31 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 PACKAGES="
-  fonts-liberation
-  libappindicator3-1
+  gconf-service
+  libappindicator1
   libasound2
-  libatk-bridge2.0-0
   libatk1.0-0
+  libatk-bridge2.0-0
+  libcairo-gobject2
+  libdrm2
   libgbm1
+  libgconf-2-4
   libgtk-3-0
   libnspr4
   libnss3
   libx11-xcb1
+  libxcb-dri3-0
   libxcomposite1
   libxcursor1
   libxdamage1
   libxfixes3
   libxi6
+  libxinerama1
   libxrandr2
+  libxshmfence1
   libxss1
   libxtst6
-  xdg-utils
+  fonts-liberation
 "
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
 APT_FLAGS="--allow-downgrades --allow-remove-essential --allow-change-held-packages"
