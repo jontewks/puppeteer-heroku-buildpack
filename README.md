@@ -16,7 +16,7 @@ Note: Heroku states that if you have a postbuild script, the build script will n
 So if you have a build script you can include it like so
 
 ```js
-"heroku-postbuild": "npm run build && mkdir  ./.cache && mv /app/.cache/puppeteer ./.cache"
+"heroku-postbuild": "npm run build && mkdir ./.cache && mv /app/.cache/puppeteer ./.cache"
 ```
 
 Without the above, heroku will not include the new cache directory that puppeteer uses, and your app will fail saying it cannot find chromium.
