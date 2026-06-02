@@ -91,7 +91,7 @@ case "${STACK}" in
       libxtst6
     "
     ;;
-  "heroku-24")
+  "heroku-24" | "heroku-26")
     PACKAGES="
       fonts-liberation
       libasound2t64
@@ -125,7 +125,7 @@ case "${STACK}" in
     "
     ;;
   *)
-    error "STACK must be 'heroku-20', 'heroku-22' or 'heroku-24', not '${STACK}'."
+    error "STACK must be 'heroku-20', 'heroku-22', 'heroku-24' or 'heroku-26', not '${STACK}'."
 esac
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
