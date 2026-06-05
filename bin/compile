@@ -58,7 +58,7 @@ mkdir -p "$APT_CACHE_DIR/archives/partial"
 mkdir -p "$APT_STATE_DIR/lists/partial"
 
 case "${STACK}" in
-  "heroku-20" | "heroku-22")
+  "heroku-22")
     PACKAGES="
       fonts-liberation
       libasound2
@@ -125,7 +125,7 @@ case "${STACK}" in
     "
     ;;
   *)
-    error "STACK must be 'heroku-20', 'heroku-22', 'heroku-24' or 'heroku-26', not '${STACK}'."
+    error "STACK must be 'heroku-22', 'heroku-24' or 'heroku-26', not '${STACK}'."
 esac
 
 APT_OPTIONS="-o debug::nolocking=true -o dir::cache=$APT_CACHE_DIR -o dir::state=$APT_STATE_DIR"
